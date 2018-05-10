@@ -12,14 +12,13 @@ public class Player extends Entity implements HasHitbox {
     private double moveSpeed = ((SCREEN_WIDTH/3)/60); // move one third of the screen in one second (60 frames)
     private boolean facingLeft;
     private boolean allowNewJump, jumping, crouching;
-    private Rectangle standingHitbox = new Rectangle(PLAYER_WIDTH/2, PLAYER_HEIGHT);
     private Rectangle crouchingHitbox = new Rectangle(PLAYER_WIDTH/2, PLAYER_CROUCH_HEIGHT);
     private double gravity = .6;
     private double yVel = JUMP_VELOCITY;
     private boolean hit;
 
     public Player(int x, int y) {
-        super(x, y);
+        super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT);
         this.x = x;
         this.y = y;
         facingLeft = false;
@@ -28,9 +27,10 @@ public class Player extends Entity implements HasHitbox {
         crouching = false;
     }
 
+    @Override
     public Rectangle getHitbox() {
         if (!crouching) {
-            return standingHitbox;
+            return super.getHitbox();
         }
         else return crouchingHitbox;
     }
@@ -94,17 +94,18 @@ public class Player extends Entity implements HasHitbox {
         if(jumping) jumpUpdate();
         if(onGround() && !jumping) allowNewJump = true;
         convertToJFX();
+        drawPlayer(gc);
+        convertToNorm();
+    }
 
+    @Override
+    protected void updateHitbox() {
         getHitbox().setX(x + (PLAYER_WIDTH - getHitbox().getWidth())/2);
-
         if (crouching) {
-            getHitbox().setY(y + (standingHitbox.getHeight() - crouchingHitbox.getHeight()));
+            getHitbox().setY(y + (hitbox.getHeight() - crouchingHitbox.getHeight()));
         } else {
             getHitbox().setY(y);
         }
-
-        drawPlayer(gc);
-        convertToNorm();
     }
 
     /**

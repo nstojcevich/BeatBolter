@@ -106,9 +106,9 @@ class EntityManager {
         isPlayerCollided();
         for(Enemy e : enemies) {
             if(player.getHitbox().localToScene(player.getHitbox().getLayoutBounds()).intersects(e.getHitbox().localToScene(e.getHitbox().getLayoutBounds()))) {
-                e.changeColor(Color.RED);
+                e.setColor(Color.RED);
             } else {
-                e.changeColor(ENEMY_COLOR);
+                e.setColor(ENEMY_COLOR);
             }
         }
     }

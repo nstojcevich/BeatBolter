@@ -7,21 +7,14 @@ import javafx.scene.shape.Rectangle;
 import static platformer.util.Constants.ENEMY_SPEED;
 import static platformer.util.Constants.SHOW_HITBOXES;
 
-public class Enemy extends Entity implements HasHitbox {
-    private Rectangle hitbox;
-    private int width, height;
+public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
     private Color color;
 
     Enemy(int x, int y, int width, int height, Color color) {
-        super(x, y);
+        super(x, y, width, height);
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
         this.color = color;
-        hitbox = new Rectangle(x, y, width, height);
-        hitbox.setX(x);
-        hitbox.setY(y - height);
     }
 
     public Rectangle getHitbox() {
@@ -30,7 +23,6 @@ public class Enemy extends Entity implements HasHitbox {
 
     public void moveLeft() {
         x -= ENEMY_SPEED;
-        updateHitbox();
     }
 
     public void draw(GraphicsContext gc) {
@@ -43,27 +35,19 @@ public class Enemy extends Entity implements HasHitbox {
         }
         else {
             gc.setFill(color);
-            gc.fillRect(x, y - height, width, height);
+            gc.fillRect(x, y, width, height);
         }
         convertToNorm();
     }
 
-    private void updateHitbox() {
-        hitbox.setX(x);
-        hitbox.setY(y - height);
-    }
-
     @Override
-    protected void convertToJFX() {
-        super.convertToJFX();
-        updateHitbox();
-    }
-
-    public void changeColor(Color color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
-    public int getWidth() {return width;}
+    @Override
+    public Color getColor() {
+        return color;
+    }
 
-    public int getHeight() {return height;}
 }
