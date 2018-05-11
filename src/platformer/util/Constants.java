@@ -20,13 +20,16 @@ public final class Constants {
     // images
     public static final Image PLAYER_RIGHT_IMAGE = new Image( "Assets/Platformer/playerRight.png", 100, 100, false, false);
     public static final Image PLAYER_LEFT_IMAGE = new Image( "Assets/Platformer/playerLeft.png", 100, 100, false, false);
-    public static final Image PLAYER_LEFT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchLeft.png", 100, 100, false, false);
-    public static final Image PLAYER_RIGHT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchRight.png", 100, 100, false, false);
+    public static final Image PLAYER_LEFT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchLeft.png", 68, 68, false, false);
+    public static final Image PLAYER_RIGHT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchRight.png", 68, 68, false, false);
 
     // player dimensions
     public static final int PLAYER_WIDTH = (int)PLAYER_LEFT_IMAGE.getWidth();
     public static final int PLAYER_HEIGHT = (int)PLAYER_LEFT_IMAGE.getHeight();
-    public static final int PLAYER_CROUCH_HEIGHT = (int)PLAYER_LEFT_IMAGE.getHeight() - 31;
+    public static final int PLAYER_CROUCH_HEIGHT = (int)PLAYER_LEFT_CROUCH_IMAGE.getHeight();
+    public static final int PLAYER_CROUCH_WIDTH = (int)PLAYER_LEFT_CROUCH_IMAGE.getWidth();
+    public static final int PLAYER_START_X = 15;
+    public static final int PLAYER_START_Y = GROUND_HEIGHT + PLAYER_HEIGHT;
 
     //player movement
     public static final double JUMP_VELOCITY = 10;

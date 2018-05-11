@@ -17,15 +17,14 @@ class EntityManager {
     private Player player;
     private List<Enemy> enemies = new ArrayList<>();
     private Random rand = new Random();
-    private int score = 0;
+    private GameManager gameManager;
 
     /**
      * Manages all enemies and players as well as score, handles movement, collision, adding, removing, and drawing of both.
      */
-    EntityManager() {
-        int playerStartX = 0;
-        int playerStartY = GROUND_HEIGHT + PLAYER_HEIGHT;
-        player = new Player(playerStartX, playerStartY);
+    EntityManager(GameManager gameManager) {
+        this.gameManager = gameManager;
+        player = new Player(PLAYER_START_X, PLAYER_START_Y);
     }
 
     /**
@@ -65,7 +64,7 @@ class EntityManager {
         enemies.removeIf(this::outOfBounds);
         int removed = before - enemies.size();
         if(!player.isHit()) {
-            score += removed;
+            gameManager.addToScore(removed);
         }
         if(removed >= 1) {
             player.setHit(false);
@@ -98,14 +97,26 @@ class EntityManager {
         else addAirEnemy();
     }
 
+    private void removeAllEnemies() {
+        enemies.clear();
+    }
+
+    private void resetPlayer() {
+        player.reset();
+    }
+
+    void reset() {
+        removeAllEnemies();
+        resetPlayer();
+    }
+
     /**
-     * Method to update enemy color if the player collides with them, also runs isPlayerCollided to check if score
-     * should be reset.
+     * Method to update enemy color if the player collides with them and reset the score
      */
     private void checkCollision() {
-        isPlayerCollided();
         for(Enemy e : enemies) {
             if(player.getHitbox().localToScene(player.getHitbox().getLayoutBounds()).intersects(e.getHitbox().localToScene(e.getHitbox().getLayoutBounds()))) {
+                player.setHit(true);
                 e.setColor(Color.RED);
             } else {
                 e.setColor(ENEMY_COLOR);
@@ -113,25 +124,7 @@ class EntityManager {
         }
     }
 
-    /**
-     * Method to detect if player is currently collided with any entities currently on the screen
-     * @return is player collided with any enemies
-     */
-    private boolean isPlayerCollided() {
-        boolean collided = false;
-        for(Enemy e : enemies) {
-            if(!collided) {
-               collided = player.getHitbox().localToScene(player.getHitbox().getLayoutBounds()).intersects(e.getHitbox().localToScene(e.getHitbox().getLayoutBounds()));
-                if(collided) {
-                    player.setHit(true);
-                    score = 0;
-                }
-            }
-        }
-        return collided;
-    }
-
-    public int getScore() {
-        return score;
+    boolean isPlayerHit() {
+        return player.isHit();
     }
 }

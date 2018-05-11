@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -17,7 +18,9 @@ import static platformer.util.Constants.*;
 
 public class Main extends Application {
     private EntityManager entityManager;
+    private GameManager gameManager;
     private int framesPassed = 0;
+    private GraphicsContext gc;
 
     public static void main(String[] args) {
         launch(args);
@@ -37,11 +40,13 @@ public class Main extends Application {
         root.getChildren().add(canvas);
 
         // Initialize graphics context
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc = canvas.getGraphicsContext2D();
 
+        // Initialize Game Manager
+        gameManager = new GameManager();
 
         // Initialize Entity Manager
-        entityManager = new EntityManager();
+        entityManager = new EntityManager(gameManager);
 
         // ArrayList to hold all of the currently pressed keys on the keyboard
         ArrayList<String> input = new ArrayList<>();
@@ -64,7 +69,7 @@ public class Main extends Application {
                 });
 
         // Draw stage to make sure screen is clear
-        drawStage(gc);
+        drawStage();
 
         // Loop to run once every 60 seconds (60 frames per second)
         Timeline gameLoop = new Timeline();
@@ -75,11 +80,14 @@ public class Main extends Application {
                 actionEvent -> {
                     framesPassed++;
 
+                    if(entityManager.isPlayerHit())
+                        resetGame();
+                    
                     if(framesPassed % 60 * 2 == 0) { // Run every 2 seconds
                         entityManager.addRandomEnemy();
                     }
 
-                    drawStage(gc); // Clear screen/draw stage
+                    drawStage(); // Clear screen/draw stage
                     entityManager.update(gc, input); // Update and draw player/enemies
                 }
         );
@@ -94,7 +102,7 @@ public class Main extends Application {
         theStage.show();
     }
 
-    private void drawStage(GraphicsContext gc) {
+    private void drawStage() {
         // Make sure everything is opaque
         gc.setGlobalAlpha(1);
 
@@ -108,6 +116,14 @@ public class Main extends Application {
 
         // Score Counter
         gc.setFill(Color.BLACK);
-        gc.fillText("Score: " + entityManager.getScore(), 10, 10);
+        gc.setFont(Font.font("Arial", 20));
+        gc.fillText("Score: " + gameManager.getScore(), 10, gc.getFont().getSize());
+        gc.fillText("Highscore: " + gameManager.getHighScore(), 10, gc.getFont().getSize()*2);
+    }
+
+    private void resetGame() {
+        gameManager.reset();
+        entityManager.reset();
+        drawStage();
     }
 }

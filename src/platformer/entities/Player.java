@@ -12,7 +12,7 @@ public class Player extends Entity implements HasHitbox {
     private double moveSpeed = ((SCREEN_WIDTH/3)/60); // move one third of the screen in one second (60 frames)
     private boolean facingLeft;
     private boolean allowNewJump, jumping, crouching;
-    private Rectangle crouchingHitbox = new Rectangle(PLAYER_WIDTH/2, PLAYER_CROUCH_HEIGHT);
+    private Rectangle crouchingHitbox = new Rectangle(PLAYER_CROUCH_WIDTH - PLAYER_CROUCH_WIDTH/3, PLAYER_CROUCH_HEIGHT);
     private double gravity = .6;
     private double yVel = JUMP_VELOCITY;
     private boolean hit;
@@ -33,6 +33,13 @@ public class Player extends Entity implements HasHitbox {
             return super.getHitbox();
         }
         else return crouchingHitbox;
+    }
+
+    public void reset() {
+        unCrouch();
+        hit = false;
+        x = PLAYER_START_X;
+        y = PLAYER_START_Y;
     }
 
     public void moveLeft() {
@@ -64,7 +71,7 @@ public class Player extends Entity implements HasHitbox {
             yVel -= gravity;
         }
         if(onGround()) {
-            y = PLAYER_HEIGHT + GROUND_HEIGHT;
+            y = getHeight() + GROUND_HEIGHT;
             jumping = false;
             yVel = JUMP_VELOCITY;
         }
@@ -75,15 +82,37 @@ public class Player extends Entity implements HasHitbox {
     }
 
     public void crouch() {
+        if(!crouching) {
+            y -= PLAYER_HEIGHT - PLAYER_CROUCH_HEIGHT;
+        }
         crouching = true;
     }
 
     public void unCrouch() {
+        if(crouching) {
+            y += PLAYER_HEIGHT - PLAYER_CROUCH_HEIGHT;
+        }
         crouching = false;
     }
 
+    @Override
+    public int getHeight() {
+        if(crouching)
+            return PLAYER_CROUCH_HEIGHT;
+        else
+            return PLAYER_HEIGHT;
+    }
+
+    @Override
+    public int getWidth() {
+        if(crouching)
+            return PLAYER_CROUCH_WIDTH;
+        else
+            return PLAYER_WIDTH;
+    }
+
     public boolean onGround() {
-        return y <= GROUND_HEIGHT + PLAYER_HEIGHT;
+        return y <= GROUND_HEIGHT + getHeight();
     }
 
     /**
@@ -100,12 +129,8 @@ public class Player extends Entity implements HasHitbox {
 
     @Override
     protected void updateHitbox() {
-        getHitbox().setX(x + (PLAYER_WIDTH - getHitbox().getWidth())/2);
-        if (crouching) {
-            getHitbox().setY(y + (hitbox.getHeight() - crouchingHitbox.getHeight()));
-        } else {
-            getHitbox().setY(y);
-        }
+        getHitbox().setX(x + (getWidth() - getHitbox().getWidth())/2);
+        getHitbox().setY(y);
     }
 
     /**
