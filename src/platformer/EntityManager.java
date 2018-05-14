@@ -18,6 +18,10 @@ class EntityManager {
     private List<Enemy> enemies = new ArrayList<>();
     private Random rand = new Random();
     private GameManager gameManager;
+    private double initialEnemySpeed = 10;
+    private double maxEnemySpeed = 30;
+    private double enemySpeed = initialEnemySpeed;
+
 
     /**
      * Manages all enemies and players as well as score, handles movement, collision, adding, removing, and drawing of both.
@@ -77,7 +81,7 @@ class EntityManager {
 
     private void moveEnemiesLeft() {
         for(Enemy e : enemies) {
-            e.moveLeft();
+            e.moveLeft(enemySpeed);
         }
     }
 
@@ -108,6 +112,7 @@ class EntityManager {
     void reset() {
         removeAllEnemies();
         resetPlayer();
+        resetEnemySpeed();
     }
 
     /**
@@ -122,6 +127,29 @@ class EntityManager {
                 e.setColor(ENEMY_COLOR);
             }
         }
+    }
+
+    void setEnemySpeed(double speed) {
+        enemySpeed = speed;
+        if(speed > maxEnemySpeed)
+            enemySpeed = maxEnemySpeed;
+    }
+
+    double getEnemySpeed() {
+        return enemySpeed;
+    }
+
+    void increaseEnemySpeed(double speed) {
+        if(speed < maxEnemySpeed) {
+            enemySpeed += speed;
+        }
+        else {
+            enemySpeed = maxEnemySpeed;
+        }
+    }
+
+    private void resetEnemySpeed() {
+        enemySpeed = initialEnemySpeed;
     }
 
     boolean isPlayerHit() {

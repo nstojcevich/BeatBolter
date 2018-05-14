@@ -20,6 +20,7 @@ public class Main extends Application {
     private EntityManager entityManager;
     private GameManager gameManager;
     private int framesPassed = 0;
+    private double runDurationSeconds = 0;
     private GraphicsContext gc;
 
     public static void main(String[] args) {
@@ -79,13 +80,17 @@ public class Main extends Application {
                 Duration.seconds(0.017), //60 frames per second
                 actionEvent -> {
                     framesPassed++;
-
-                    if(entityManager.isPlayerHit())
+                    runDurationSeconds = framesPassed/60;
+                    entityManager.setEnemySpeed(10 + runDurationSeconds/10);
+                    if(entityManager.isPlayerHit()) {
+                        framesPassed = 0;
                         resetGame();
+                    }
                     
                     if(framesPassed % 60 * 2 == 0) { // Run every 2 seconds
                         entityManager.addRandomEnemy();
                     }
+
 
                     drawStage(); // Clear screen/draw stage
                     entityManager.update(gc, input); // Update and draw player/enemies

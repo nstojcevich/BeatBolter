@@ -4,7 +4,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import static platformer.util.Constants.ENEMY_SPEED;
 import static platformer.util.Constants.SHOW_HITBOXES;
 
 public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
@@ -21,8 +20,8 @@ public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
         return hitbox;
     }
 
-    public void moveLeft() {
-        x -= ENEMY_SPEED;
+    public void moveLeft(double speed) {
+        x -= speed;
     }
 
     public void draw(GraphicsContext gc) {

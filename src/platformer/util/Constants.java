@@ -14,7 +14,6 @@ public final class Constants {
     public static final int GROUND_HEIGHT = 20;
 
     // enemy
-    public static final int ENEMY_SPEED = 10;
     public static Color ENEMY_COLOR = Color.DARKSLATEGRAY;
 
     // images
