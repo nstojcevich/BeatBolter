@@ -2,13 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/platformer/GameScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/platformer/MainMenuScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/platformer/SceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/platformer/StartGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/platformer/scenes/MainScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platformer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BeatBolter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/Assets/Platformer/playerCrouchLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/Assets/Platformer/playerCrouchRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/Assets/Platformer/playerLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/Assets/Platformer/playerRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/EntityManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Platformer/platformer/EntityManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Platformer/platformer/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/GameScene.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Platformer/platformer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/MainMenuScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/PauseMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/SceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Platformer/platformer/util/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Platformer/score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Platformer/score.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/Platformer/playerCrouchLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/assets/player/crouch_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/Platformer/playerCrouchRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/assets/player/crouch_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/Platformer/playerLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/assets/player/standing_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/Platformer/playerRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/assets/player/standing_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/EntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/GameScene.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/platformer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/MainMenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/scenes/PauseMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platformer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/util/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/score.txt" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -70,47 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SceneController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/platformer/SceneController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/GameScene.java">
+        <entry file="file://$PROJECT_DIR$/src/platformer/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="89" column="92" selection-start-line="89" selection-start-column="91" selection-end-line="89" selection-end-column="92" />
+            <state relative-caret-position="96">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,71 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PauseMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/PauseMenu.java">
+      <file leaf-file-name="MainMenuScene.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/MainMenuScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/entities/Enemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="174" column="14" selection-start-line="174" selection-end-line="175" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -201,9 +131,7 @@
     <findStrings>
       <find>facingLeft</find>
       <find>thescene</find>
-      <find>scene</find>
       <find>player</find>
-      <find>update</find>
       <find>jumps</find>
       <find>HEIGHT</find>
       <find>writeHi</find>
@@ -217,6 +145,15 @@
       <find>setVij</find>
       <find>scoreText.set</find>
       <find>m</find>
+      <find>scene</find>
+      <find>print</find>
+      <find>sceneManager</find>
+      <find>fps</find>
+      <find>statsText</find>
+      <find>handle</find>
+      <find>stats</find>
+      <find>update</find>
+      <find>stats(</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -255,17 +192,22 @@
         <option value="$PROJECT_DIR$/src/platformer/entities/GroundEnemy.java" />
         <option value="$PROJECT_DIR$/src/platformer/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/platformer/score.txt" />
-        <option value="$PROJECT_DIR$/src/platformer/GameManager.java" />
         <option value="$PROJECT_DIR$/src/platformer/entities/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/platformer/EntityManager.java" />
-        <option value="$PROJECT_DIR$/src/score.txt" />
-        <option value="$PROJECT_DIR$/src/platformer/util/Constants.java" />
         <option value="$PROJECT_DIR$/src/platformer/StageController.java" />
-        <option value="$PROJECT_DIR$/src/platformer/SceneController.java" />
-        <option value="$PROJECT_DIR$/src/platformer/Main.java" />
-        <option value="$PROJECT_DIR$/src/platformer/MainMenuScene.java" />
         <option value="$PROJECT_DIR$/src/platformer/PauseMenu.java" />
         <option value="$PROJECT_DIR$/src/platformer/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/platformer/SceneController.java" />
+        <option value="$PROJECT_DIR$/src/platformer/MainMenuScene.java" />
+        <option value="$PROJECT_DIR$/src/platformer/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/platformer/util/Constants.java" />
+        <option value="$PROJECT_DIR$/src/platformer/EntityManager.java" />
+        <option value="$PROJECT_DIR$/src/Start.java" />
+        <option value="$PROJECT_DIR$/src/platformer/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/platformer/SceneManager.java" />
+        <option value="$PROJECT_DIR$/src/score.txt" />
+        <option value="$PROJECT_DIR$/src/platformer/scenes/MainScene.java" />
+        <option value="$PROJECT_DIR$/src/platformer/Main.java" />
+        <option value="$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java" />
       </list>
     </option>
   </component>
@@ -292,7 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,41 +251,14 @@
               <item name="Platformer" type="b2602c69:ProjectViewProjectNode" />
               <item name="Platformer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platformer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
-              <item name="Platformer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platformer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="platformer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platformer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Platformer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="platformer" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,7 +273,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BeatBolterGDX/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -366,14 +281,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Assets/Platformer" />
-      <recent name="$PROJECT_DIR$/src/Assets/TestInput" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/'" />
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Assets/Platformer" />
       <recent name="$PROJECT_DIR$/src/Assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Assets/Platformer" />
       <recent name="$PROJECT_DIR$/src/Assets/TestInput" />
     </key>
   </component>
@@ -389,13 +305,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StartGame">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="platformer.Main" />
-      <module name="Platformer" />
+      <module name="BeatBolter" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -405,6 +321,11 @@
       </extension>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration name="StartGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="platformer.StartGame" />
+      <module name="BeatBolter" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -473,6 +394,15 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.StartGame" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartGame" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -501,14 +431,16 @@
       <workItem from="1526048755977" duration="662000" />
       <workItem from="1526257137345" duration="7403000" />
       <workItem from="1526473448481" duration="17009000" />
+      <workItem from="1526510095359" duration="10108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92373000" />
+    <option name="totallyTimeSpent" value="102481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -519,23 +451,23 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32858709" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32858709" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32968238" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14605543" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14765458" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
       <window_info anchor="bottom" id="Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="7" />
@@ -548,9 +480,8 @@
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32858709" />
       <window_info anchor="right" id="JetGradle" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32858709" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -569,7 +500,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.32968238" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14605543" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14765458" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -577,6 +508,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
@@ -600,33 +532,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="88" column="23" lean-forward="true" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -780,13 +685,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Constants.kt" />
-    <entry file="jar:///usr/lib64/openjdk-8/jre/lib/ext/jfxrt.jar!/javafx/scene/image/Image.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1905">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/MovementHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/MovementManager.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/EnemyManager.java" />
@@ -836,17 +734,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/score.txt">
+    <entry file="jar:///usr/lib64/openjdk-8/jre/lib/ext/jfxrt.jar!/javafx/scene/layout/VBox.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -854,6 +745,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib64/openjdk-8/jre/lib/ext/jfxrt.jar!/javafx/scene/image/Image.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="444" selection-start-line="444" selection-end-line="444" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/assets/player/crouch_left.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/util/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -867,67 +810,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
+    <entry file="file://$PROJECT_DIR$/src/score.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/MainScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#605#1156#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#2062#2063#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/PauseMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="174" column="14" selection-start-line="174" selection-end-line="175" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib64/openjdk-8/jre/lib/ext/jfxrt.jar!/javafx/scene/layout/VBox.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/PauseMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/MainMenuScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/GameScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="89" column="92" selection-start-line="89" selection-start-column="91" selection-end-line="89" selection-end-column="92" />
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -936,21 +845,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="270">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/SceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/platformer/StartGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
         </state>
       </provider>
     </entry>

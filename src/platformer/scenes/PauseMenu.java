@@ -1,18 +1,19 @@
-package platformer;
+package platformer.scenes;
 
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import platformer.SceneManager;
 
 
 public class PauseMenu extends VBox{
 
-    public PauseMenu(SceneController controller, GameScene gameScene, Canvas gameCanvas) {
+    public PauseMenu(SceneManager controller, GameScene gameScene, Canvas gameCanvas) {
         super(vBox(controller, gameScene, gameCanvas));
     }
 
-    private static VBox vBox(SceneController controller, GameScene gameScene, Canvas gameCanvas) {
+    private static VBox vBox(SceneManager controller, GameScene gameScene, Canvas gameCanvas) {
         Button exitToMenuButton, resumeGameButton;
 
         VBox vBox = new VBox(10);

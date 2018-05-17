@@ -9,24 +9,28 @@ import static platformer.util.Constants.SCREEN_HEIGHT;
 import static platformer.util.Constants.SCREEN_WIDTH;
 
 public class Main extends Application {
+    /*
+        **---------------------------------------------------**
+        **            RUN CODE FROM START NOT MAIN           **
+        **---------------------------------------------------**
+     */
     private Canvas gameCanvas;
 
     public static void main(String[] args) {
-        launch(args);
+        launch(Main.class, args);
     }
 
     public void start(Stage theStage) {
         theStage.setTitle("Platformer Test");
-
         Group root = new Group();
 
         // Initialize Canvas
         gameCanvas = new Canvas(SCREEN_WIDTH, SCREEN_HEIGHT);
         root.getChildren().add(gameCanvas);
 
-        SceneController controller = new SceneController(root, gameCanvas, theStage);
+        SceneManager sceneManager = new SceneManager(root, gameCanvas, theStage);
 
         // Finally show everything
-        controller.start();
+        sceneManager.start();
     }
 }

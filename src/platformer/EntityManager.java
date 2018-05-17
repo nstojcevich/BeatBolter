@@ -13,7 +13,7 @@ import java.util.Random;
 
 import static platformer.util.Constants.*;
 
-class EntityManager {
+public class EntityManager {
     private Player player;
     private List<Enemy> enemies = new ArrayList<>();
     private Random rand = new Random();
@@ -26,7 +26,7 @@ class EntityManager {
     /**
      * Manages all enemies and players as well as score, handles movement, collision, adding, removing, and drawing of both.
      */
-    EntityManager(GameManager gameManager) {
+    public EntityManager(GameManager gameManager) {
         this.gameManager = gameManager;
         player = new Player(PLAYER_START_X, PLAYER_START_Y);
     }
@@ -36,7 +36,7 @@ class EntityManager {
      * @param input
      * Update players and enemies, and then check collision
      */
-    void update(GraphicsContext gc, ArrayList<String> input) {
+    public void update(GraphicsContext gc, ArrayList<String> input) {
         player.movePlayer(input);
         player.update(gc);
         updateEnemies(gc);
@@ -44,6 +44,7 @@ class EntityManager {
     }
 
     private void updateEnemies(GraphicsContext gc) {
+        updateEnemySpeed();
         moveEnemies();
         removeOutOfBounds();
         drawEnemies(gc);
@@ -96,7 +97,7 @@ class EntityManager {
     /**
      * add a new air or ground enemy based on a random number (50% chance for both)
      */
-    void addRandomEnemy() {
+    public void addRandomEnemy() {
         if(rand.nextInt(2) == 1) addGroundEnemy();
         else addAirEnemy();
     }
@@ -109,7 +110,7 @@ class EntityManager {
         player.reset();
     }
 
-    void reset() {
+    public void reset() {
         removeAllEnemies();
         resetPlayer();
         resetEnemySpeed();
@@ -129,30 +130,16 @@ class EntityManager {
         }
     }
 
-    void setEnemySpeed(double speed) {
-        enemySpeed = speed;
-        if(speed > maxEnemySpeed)
-            enemySpeed = maxEnemySpeed;
-    }
-
-    double getEnemySpeed() {
-        return enemySpeed;
-    }
-
-    void increaseEnemySpeed(double speed) {
-        if(speed < maxEnemySpeed) {
-            enemySpeed += speed;
-        }
-        else {
-            enemySpeed = maxEnemySpeed;
-        }
+    private void updateEnemySpeed() {
+        if(enemySpeed < maxEnemySpeed)
+            enemySpeed = (gameManager.getScore() / 10) + initialEnemySpeed;
     }
 
     private void resetEnemySpeed() {
         enemySpeed = initialEnemySpeed;
     }
 
-    boolean isPlayerHit() {
+    public boolean isPlayerHit() {
         return player.isHit();
     }
 }

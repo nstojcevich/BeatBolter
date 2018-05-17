@@ -17,10 +17,10 @@ public final class Constants {
     public static Color ENEMY_COLOR = Color.DARKSLATEGRAY;
 
     // images
-    public static final Image PLAYER_RIGHT_IMAGE = new Image( "Assets/Platformer/playerRight.png", 100, 100, false, false);
-    public static final Image PLAYER_LEFT_IMAGE = new Image( "Assets/Platformer/playerLeft.png", 100, 100, false, false);
-    public static final Image PLAYER_LEFT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchLeft.png", 68, 68, false, false);
-    public static final Image PLAYER_RIGHT_CROUCH_IMAGE = new Image( "Assets/Platformer/playerCrouchRight.png", 68, 68, false, false);
+    public static final Image PLAYER_RIGHT_IMAGE = new Image("platformer/assets/player/standing_right.png", 100, 100, false, false);
+    public static final Image PLAYER_LEFT_IMAGE = new Image("platformer/assets/player/standing_left.png", 100, 100, false, false);
+    public static final Image PLAYER_LEFT_CROUCH_IMAGE = new Image("platformer/assets/player/crouch_left.png", 68, 68, false, false);
+    public static final Image PLAYER_RIGHT_CROUCH_IMAGE = new Image("platformer/assets/player/crouch_right.png", 68, 68, false, false);
 
     // player dimensions
     public static final int PLAYER_WIDTH = (int)PLAYER_LEFT_IMAGE.getWidth();

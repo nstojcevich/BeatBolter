@@ -3,38 +3,38 @@ package platformer;
 import java.io.*;
 import java.util.Scanner;
 
-class GameManager {
+public class GameManager {
     private int score = 0;
     private int highScore = 0;
     private PrintWriter writer;
     private File scoreFile = new File("src/score.txt");
 
-    GameManager() {
+    public GameManager() {
         readHighScoreFromFile();
     }
 
-    void setScore(int score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
-    int getScore() {
+    public int getScore() {
         return score;
     }
 
-    int getHighScore() {
+    public int getHighScore() {
         return highScore;
     }
 
-    void addToScore(int scoreToAdd) {
+    public void addToScore(int scoreToAdd) {
         setScore(score += scoreToAdd);
     }
 
-    void resetScore() {
+    public void resetScore() {
         updateHighscore();
         setScore(0);
     }
 
-    void reset() {
+    public void reset() {
         resetScore();
     }
 
