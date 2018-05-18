@@ -1,6 +1,5 @@
 package platformer.scenes;
 
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
@@ -32,19 +31,9 @@ public class PauseMenu extends VBox{
         resumeGameButton.setText("Resume");
         resumeGameButton.setVisible(true);
 
-        resumeGameButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                resumeGameButton.setEffect(dropShadow);
-            }
-        });
+        resumeGameButton.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> resumeGameButton.setEffect(dropShadow));
 
-        resumeGameButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                resumeGameButton.setEffect(null);
-            }
-        });
+        resumeGameButton.addEventHandler(MouseEvent.MOUSE_EXITED, mouseEvent -> resumeGameButton.setEffect(null));
 
         resumeGameButton.setOnAction(actionEvent ->
                 gameScene.unpauseGame());
@@ -53,19 +42,9 @@ public class PauseMenu extends VBox{
         exitToMenuButton.setText("Return to Menu");
         exitToMenuButton.setVisible(true);
 
-        exitToMenuButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                exitToMenuButton.setEffect(dropShadow);
-            }
-        });
+        exitToMenuButton.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> exitToMenuButton.setEffect(dropShadow));
 
-        exitToMenuButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                exitToMenuButton.setEffect(null);
-            }
-        });
+        exitToMenuButton.addEventHandler(MouseEvent.MOUSE_EXITED, mouseEvent -> exitToMenuButton.setEffect(null));
 
         exitToMenuButton.setOnAction(actionEvent -> {
             controller.switchToMenu();
