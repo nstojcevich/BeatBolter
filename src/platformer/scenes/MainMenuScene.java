@@ -4,11 +4,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import platformer.SceneManager;
 
-import static platformer.util.Constants.SCREEN_HEIGHT;
-import static platformer.util.Constants.SCREEN_WIDTH;
+import static platformer.util.Constants.*;
 
 public class MainMenuScene extends Scene {
     /**
@@ -25,11 +25,12 @@ public class MainMenuScene extends Scene {
         layout.prefWidthProperty().bind(gameScene.widthProperty());
         layout.prefHeightProperty().bind(gameScene.heightProperty());
         layout.setAlignment(Pos.CENTER);
+        ImageView imageHouse = new ImageView(MAIN_SCREEN_BACKGROUND);
         Button button2= new Button("Start Game");
         button2.setOnAction(e -> {
             controller.switchToGame();
         });
-        layout.getChildren().addAll(label, button2);
+        layout.getChildren().addAll(label, button2, imageHouse);
         return layout;
     }
 }

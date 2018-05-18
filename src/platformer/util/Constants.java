@@ -21,6 +21,7 @@ public final class Constants {
     public static final Image PLAYER_LEFT_IMAGE = new Image("platformer/assets/player/standing_left.png", 100, 100, false, false);
     public static final Image PLAYER_LEFT_CROUCH_IMAGE = new Image("platformer/assets/player/crouch_left.png", 68, 68, false, false);
     public static final Image PLAYER_RIGHT_CROUCH_IMAGE = new Image("platformer/assets/player/crouch_right.png", 68, 68, false, false);
+    public static final Image MAIN_SCREEN_BACKGROUND = new Image("platformer/assets/menu/menu_background.png", SCREEN_WIDTH, SCREEN_HEIGHT, false, false);
 
     // player dimensions
     public static final int PLAYER_WIDTH = (int)PLAYER_LEFT_IMAGE.getWidth();
