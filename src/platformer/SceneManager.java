@@ -50,4 +50,8 @@ public class SceneManager {
         gameScene.update(framesPassed);
         mainScene.updateFPS();
     }
+
+    public void setPaused(boolean paused) {
+        mainScene.setPaused(paused);
+    }
 }

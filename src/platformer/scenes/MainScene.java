@@ -15,6 +15,7 @@ public class MainScene extends Scene {
     private static double[] frameRates = new double[100];
     private int framesPassed = 0;
     private Text fpsText;
+    private Boolean paused = false;
 
     public MainScene(SceneManager sceneManager) {
         super(new VBox());
@@ -25,7 +26,8 @@ public class MainScene extends Scene {
             {
                 if (lastUpdate > 0)
                 {
-                    framesPassed++;
+                    if(!paused)
+                        framesPassed++;
                     long nanosElapsed = now - lastUpdate;
                     double frameRate = 1000000000.0 / nanosElapsed;
                     index %= frameRates.length;
@@ -58,9 +60,7 @@ public class MainScene extends Scene {
         double total = 0.0d;
 
         for (int i = 0; i < frameRates.length; i++)
-        {
             total += frameRates[i];
-        }
 
         return (int)Math.round(total / frameRates.length);
     }
@@ -77,5 +77,9 @@ public class MainScene extends Scene {
 
     public void updateFPS() {
         fpsText.setText("FPS: " + getAverageFPS());
+    }
+
+    public void setPaused(boolean paused) {
+        this.paused = paused;
     }
 }

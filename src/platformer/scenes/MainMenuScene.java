@@ -3,9 +3,7 @@ package platformer.scenes;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import platformer.SceneManager;
 
 import static platformer.util.Constants.*;
@@ -16,21 +14,22 @@ public class MainMenuScene extends Scene {
      * @return scene with a single button that will switch to the game when pressed
      */
     public MainMenuScene(SceneManager controller, GameScene gameScene) {
-        super(layout(controller, gameScene), SCREEN_WIDTH, SCREEN_HEIGHT);
+        super(menuVBox(controller, gameScene), SCREEN_WIDTH, SCREEN_HEIGHT);
     }
 
-    public static VBox layout(SceneManager controller, GameScene gameScene) {
+    private static VBox menuVBox(SceneManager controller, GameScene gameScene) {
+        BackgroundImage backgroundImage = new BackgroundImage(MAIN_SCREEN_BACKGROUND, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background background = new Background(backgroundImage);
         VBox layout = new VBox(20);
-        Label label= new Label("Main Menu");
         layout.prefWidthProperty().bind(gameScene.widthProperty());
         layout.prefHeightProperty().bind(gameScene.heightProperty());
         layout.setAlignment(Pos.CENTER);
-        ImageView imageHouse = new ImageView(MAIN_SCREEN_BACKGROUND);
-        Button button2= new Button("Start Game");
+        Button button2 = new Button("Start Game");
         button2.setOnAction(e -> {
             controller.switchToGame();
         });
-        layout.getChildren().addAll(label, button2, imageHouse);
+        layout.getChildren().addAll(button2);
+        layout.setBackground(background);
         return layout;
     }
 }
