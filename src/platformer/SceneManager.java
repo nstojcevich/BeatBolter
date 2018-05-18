@@ -33,6 +33,7 @@ public class SceneManager {
     }
 
     public void switchToGame() {
+        gameScene.resetGame();
         theStage.setScene(gameScene);
     }
 

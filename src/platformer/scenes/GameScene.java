@@ -120,7 +120,7 @@ public class GameScene extends Scene{
         updateStats();
     }
 
-    private void resetGame() {
+    public void resetGame() {
         gameManager.reset();
         entityManager.reset();
         drawStage();
