@@ -8,20 +8,17 @@ import platformer.entities.GroundEnemy;
 import platformer.entities.Player;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import static platformer.util.Constants.*;
 
 public class EntityManager {
     private Player player;
-    private List<Enemy> enemies = new ArrayList<>();
+    private Set<Enemy> enemies = new HashSet<>();
     private Random rand = new Random();
     private GameManager gameManager;
-    private double initialEnemySpeed = 10;
-    private double maxEnemySpeed = 30;
-    private double enemySpeed = initialEnemySpeed;
-
 
     /**
      * Manages all enemies and players as well as score, handles movement, collision, adding, removing, and drawing of both.
@@ -38,14 +35,16 @@ public class EntityManager {
      */
     public void update(GraphicsContext gc, ArrayList<String> input) {
         player.movePlayer(input);
+        player.updateMovement();
         player.update(gc);
         updateEnemies(gc);
         checkCollision();
     }
 
     private void updateEnemies(GraphicsContext gc) {
-        updateEnemySpeed();
-        moveEnemies();
+        for(Enemy e : enemies) {
+            e.updateMovement();
+        }
         removeOutOfBounds();
         drawEnemies(gc);
     }
@@ -57,7 +56,7 @@ public class EntityManager {
     }
 
     private boolean outOfBounds(Enemy e) {
-        return e.getNormal_X() + e.getWidth() < 0 || e.getNormal_X() > SCREEN_WIDTH;
+        return e.getHitbox().getX() + e.getHitbox().getWidth() < 0 || e.getHitbox().getX() > SCREEN_WIDTH;
     }
 
     /**
@@ -73,16 +72,6 @@ public class EntityManager {
         }
         if(removed >= 1) {
             player.setHit(false);
-        }
-    }
-
-    private void moveEnemies() {
-        moveEnemiesLeft();
-    }
-
-    private void moveEnemiesLeft() {
-        for(Enemy e : enemies) {
-            e.moveLeft(enemySpeed);
         }
     }
 
@@ -113,7 +102,6 @@ public class EntityManager {
     public void reset() {
         removeAllEnemies();
         resetPlayer();
-        resetEnemySpeed();
     }
 
     /**
@@ -121,22 +109,13 @@ public class EntityManager {
      */
     private void checkCollision() {
         for(Enemy e : enemies) {
-            if(player.getHitbox().localToScene(player.getHitbox().getLayoutBounds()).intersects(e.getHitbox().localToScene(e.getHitbox().getLayoutBounds()))) {
+            if(player.getHitbox().getBoundsInLocal().intersects(e.getHitbox().getBoundsInLocal())) {
                 player.setHit(true);
                 e.setColor(Color.RED);
             } else {
                 e.setColor(ENEMY_COLOR);
             }
         }
-    }
-
-    private void updateEnemySpeed() {
-        if(enemySpeed < maxEnemySpeed)
-            enemySpeed = (gameManager.getScore() / 10) + initialEnemySpeed;
-    }
-
-    private void resetEnemySpeed() {
-        enemySpeed = initialEnemySpeed;
     }
 
     public boolean isPlayerHit() {

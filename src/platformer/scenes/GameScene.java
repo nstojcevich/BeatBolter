@@ -26,6 +26,8 @@ public class GameScene extends Scene{
     private PauseMenu pauseMenu;
     private SceneManager sceneManager;
     private ArrayList<String> input;
+    long lastEnemyAdd = -1;
+
 
 
     public GameScene(Group root, Canvas gameCanvas, SceneManager sceneManager) {
@@ -60,7 +62,7 @@ public class GameScene extends Scene{
                 });
     }
 
-    public void update(int framesPassed) {
+    public void update() {
         if (!sceneManager.getCurrentScene().equals(this)) {
             paused = true;
         } else if (!pauseMenu.isVisible()) {
@@ -72,8 +74,9 @@ public class GameScene extends Scene{
                 resetGame();
             }
 
-            if (framesPassed % 60 * 2 == 0) { // Run every 2 seconds
+            if((System.currentTimeMillis() - lastEnemyAdd) >= 1000) { // 2 per second
                 entityManager.addRandomEnemy();
+                lastEnemyAdd = System.currentTimeMillis();
             }
 
             if (input.contains("P")) {

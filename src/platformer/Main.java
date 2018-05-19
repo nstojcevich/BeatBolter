@@ -9,11 +9,6 @@ import static platformer.util.Constants.SCREEN_HEIGHT;
 import static platformer.util.Constants.SCREEN_WIDTH;
 
 public class Main extends Application {
-    /*
-        **---------------------------------------------------**
-        **            RUN CODE FROM START NOT MAIN           **
-        **---------------------------------------------------**
-     */
     private Canvas gameCanvas;
 
     public static void main(String[] args) {

@@ -16,6 +16,8 @@ public class Player extends Entity implements HasHitbox {
     private double gravity = .6;
     private double yVel = JUMP_VELOCITY;
     private boolean hit;
+    private long lastMove = -1;
+    private long lastJumpdate = -1;
 
     public Player(int x, int y) {
         super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT);
@@ -54,14 +56,14 @@ public class Player extends Entity implements HasHitbox {
 
     public void jump() {
         if(!jumping) {
-            jumpUpdate();
+            jumpdate();
         }
     }
 
     /**
      * Move the player through the jump process, factors in gravity to create an arc
      */
-    private void jumpUpdate() {
+    private void jumpdate() {
         if(!crouching && allowNewJump) {
             allowNewJump = false;
             jumping = true;
@@ -120,17 +122,28 @@ public class Player extends Entity implements HasHitbox {
      * @param gc
      */
     public void update(GraphicsContext gc) {
-        if(jumping) jumpUpdate();
         if(onGround() && !jumping) allowNewJump = true;
-        convertToJFX();
         drawPlayer(gc);
-        convertToNorm();
     }
 
     @Override
     protected void updateHitbox() {
         getHitbox().setX(x + (getWidth() - getHitbox().getWidth())/2);
-        getHitbox().setY(y);
+        getHitbox().setY(SCREEN_HEIGHT - y);
+    }
+
+    @Override
+    public void updateMovement() {
+        if(jumping) {
+            if ((System.currentTimeMillis() - lastJumpdate) >= 16.67) { // 2 per second
+                jumpdate();
+                lastJumpdate = System.currentTimeMillis();
+            }
+        }
+        if(lastMove < 0)
+            lastMove = System.currentTimeMillis();
+        lastMove = System.currentTimeMillis();
+        updateHitbox();
     }
 
     /**
@@ -139,11 +152,11 @@ public class Player extends Entity implements HasHitbox {
      */
     private void drawPlayer(GraphicsContext gc) {
         if (facingLeft) {
-            if(crouching) gc.drawImage(PLAYER_LEFT_CROUCH_IMAGE, x, y);
-            else gc.drawImage(PLAYER_LEFT_IMAGE, x, y);
+            if(crouching) gc.drawImage(PLAYER_LEFT_CROUCH_IMAGE, x, gc.getCanvas().getHeight() - y);
+            else gc.drawImage(PLAYER_LEFT_IMAGE, x, gc.getCanvas().getHeight() - y);
         } else {
-            if(crouching) gc.drawImage(PLAYER_RIGHT_CROUCH_IMAGE, x, y);
-            else gc.drawImage(PLAYER_RIGHT_IMAGE, x, y);
+            if(crouching) gc.drawImage(PLAYER_RIGHT_CROUCH_IMAGE, x, gc.getCanvas().getHeight() - y);
+            else gc.drawImage(PLAYER_RIGHT_IMAGE, x, gc.getCanvas().getHeight() - y);
         }
         if(SHOW_HITBOXES) {
             gc.setFill(Color.GREENYELLOW);
@@ -173,7 +186,7 @@ public class Player extends Entity implements HasHitbox {
      */
     public void movePlayer(ArrayList<String> input) {
         if (input.contains("LEFT") && !input.contains("RIGHT")) {
-            //moveLeft();
+            //move();
         }
 
         if (input.contains("RIGHT") && !input.contains("LEFT")) {

@@ -24,17 +24,7 @@ public class MainScene extends Scene {
             @Override
             public void handle(long now)
             {
-                if (lastUpdate > 0)
-                {
-                    if(!paused)
-                        framesPassed++;
-                    long nanosElapsed = now - lastUpdate;
-                    double frameRate = 1000000000.0 / nanosElapsed;
-                    index %= frameRates.length;
-                    frameRates[index++] = frameRate;
-                }
-                sceneManager.update(framesPassed);
-                lastUpdate = now;
+                sceneManager.update();
             }
         };
 

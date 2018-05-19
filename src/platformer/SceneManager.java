@@ -46,8 +46,8 @@ public class SceneManager {
         return theStage.getScene();
     }
 
-    public void update(int framesPassed) {
-        gameScene.update(framesPassed);
+    public void update() {
+        gameScene.update();
         mainScene.updateFPS();
     }
 

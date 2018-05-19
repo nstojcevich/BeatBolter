@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 public final class Constants {
 
     private Constants() {}
-    public static final boolean SHOW_HITBOXES = false;
+    public static final boolean SHOW_HITBOXES = true;
 
     // screen/platform dimensions
     public static final int SCREEN_WIDTH = 960;

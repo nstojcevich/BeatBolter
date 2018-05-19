@@ -8,6 +8,7 @@ import static platformer.util.Constants.SHOW_HITBOXES;
 
 public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
     private Color color;
+    private long lastMove = -1;
 
     Enemy(int x, int y, int width, int height, Color color) {
         super(x, y, width, height);
@@ -16,16 +17,26 @@ public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
         this.color = color;
     }
 
+    @Override
+    public void updateMovement() {
+        if(lastMove < 0)
+            lastMove = System.currentTimeMillis();
+        if(System.currentTimeMillis() - lastMove > 5) {
+            move(((System.currentTimeMillis() - lastMove) / 16.67f) * -10); // move 15 pixels per 60th of a second
+            lastMove = System.currentTimeMillis();
+            updateHitbox();
+        }
+    }
+
     public Rectangle getHitbox() {
         return hitbox;
     }
 
-    public void moveLeft(double speed) {
-        x -= speed;
+    private void move(double speed) {
+        x += speed;
     }
 
     public void draw(GraphicsContext gc) {
-        convertToJFX();
         if(SHOW_HITBOXES) {
             gc.setGlobalAlpha(.5);
             gc.setFill(color);
@@ -34,9 +45,8 @@ public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
         }
         else {
             gc.setFill(color);
-            gc.fillRect(x, y, width, height);
+            gc.fillRect(x, gc.getCanvas().getHeight() - y, width, height);
         }
-        convertToNorm();
     }
 
     @Override
