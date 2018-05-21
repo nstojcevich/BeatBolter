@@ -30,7 +30,6 @@ public class GameScene extends Scene{
     long pausedTime = -1;
 
 
-
     public GameScene(Group root, Canvas gameCanvas, SceneManager sceneManager) {
         super(root, SCREEN_WIDTH, SCREEN_HEIGHT);
         game_gc = gameCanvas.getGraphicsContext2D();
@@ -82,33 +81,31 @@ public class GameScene extends Scene{
                 pauseGame();
                 input.remove("SPACE");
             }
-            drawStage(); // Clear screen/draw stage
-            entityManager.updateMovement(input); // Update and draw player/enemies
-            entityManager.drawAllEntities(game_gc);
+            entityManager.updateMovement(input); // Update and drawEntities player/enemies
+            draw();
         }
     }
 
     public void pauseGame() {
-        openPauseMenu();
+        game_gc.setEffect(new GaussianBlur());
+        pauseMenu.setVisible(true);
         paused = true;
         pausedTime = System.currentTimeMillis();
     }
 
     public void unpauseGame() {
-        closePauseMenu();
+        pauseMenu.setVisible(false);
+        game_gc.setEffect(null);
         paused = false;
         pausedTime -= System.currentTimeMillis();
         lastEnemyAdd -= pausedTime;
     }
 
-    private void openPauseMenu() {
-        game_gc.setEffect(new GaussianBlur());
-        pauseMenu.setVisible(true);
-    }
+    private void draw() {
+        drawStage();
+        entityManager.drawEntities(game_gc);
+        updateStats();
 
-    private void closePauseMenu() {
-        pauseMenu.setVisible(false);
-        game_gc.setEffect(null);
     }
 
     private void drawStage() {
@@ -122,8 +119,6 @@ public class GameScene extends Scene{
         // Ground
         game_gc.setFill(Color.GREEN);
         game_gc.fillRect(0, SCREEN_HEIGHT - GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT);
-
-        updateStats();
     }
 
     public void resetGame() {

@@ -42,19 +42,11 @@ public class EntityManager {
         checkCollision();
     }
 
-    public void drawAllEntities(GraphicsContext gc) {
-        drawPlayer(gc);
-        drawEnemies(gc);
-    }
-
-    private void drawEnemies(GraphicsContext gc) {
+    public void drawEntities(GraphicsContext gc) {
+        player.draw(gc);
         for(Enemy e : enemies) {
             e.draw(gc);
         }
-    }
-
-    private void drawPlayer(GraphicsContext gc) {
-        player.draw(gc);
     }
 
     private boolean outOfBounds(Enemy e) {
@@ -77,37 +69,23 @@ public class EntityManager {
         }
     }
 
-    private void addGroundEnemy() {
-        enemies.add(new GroundEnemy());
-    }
-
-    private void addAirEnemy() {
-        enemies.add(new AirEnemy());
-    }
-
     /**
      * add a new air or ground enemy based on a random number (50% chance for both)
      */
     public void addRandomEnemy() {
-        if(rand.nextInt(2) == 1) addGroundEnemy();
-        else addAirEnemy();
-    }
-
-    private void removeAllEnemies() {
-        enemies.clear();
-    }
-
-    private void resetPlayer() {
-        player.reset();
+        if(rand.nextInt(2) == 1)
+            enemies.add(new GroundEnemy());
+        else
+            enemies.add(new AirEnemy());
     }
 
     public void reset() {
-        removeAllEnemies();
-        resetPlayer();
+        enemies.clear();
+        player.reset();
     }
 
     /**
-     * Method to draw enemy color if the player collides with them and reset the score
+     * Method to drawEntities enemy color if the player collides with them and reset the score
      */
     private void checkCollision() {
         for(Enemy e : enemies) {

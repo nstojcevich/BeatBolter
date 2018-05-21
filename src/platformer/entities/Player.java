@@ -44,16 +44,6 @@ public class Player extends Entity implements HasHitbox {
         y = PLAYER_START_Y;
     }
 
-    public void moveLeft() {
-        x -= moveSpeed;
-        facingLeft = true;
-    }
-
-    public void moveRight() {
-        x += moveSpeed;
-        facingLeft = false;
-    }
-
     public void jump() {
         if(!jumping) {
             jumpdate();
@@ -115,7 +105,7 @@ public class Player extends Entity implements HasHitbox {
 
     /**
      * Draw the player. To be called every frame
-     * @param gc graphics context to draw the player to
+     * @param gc graphics context to drawEntities the player to
      */
     public void draw(GraphicsContext gc) {
         drawPlayer(gc);
