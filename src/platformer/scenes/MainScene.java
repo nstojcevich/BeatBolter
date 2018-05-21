@@ -10,10 +10,14 @@ import platformer.SceneManager;
 import platformer.util.Constants;
 
 public class MainScene extends Scene {
+    private static long lastUpdate = 0;
     private static int index = 0;
     private static double[] frameRates = new double[100];
     private Text fpsText;
 
+    /**
+     * Main scene used to handle looping for graphics updates.
+     */
     public MainScene(SceneManager sceneManager) {
         super(new VBox());
         AnimationTimer frameRateMeter = new AnimationTimer()
@@ -21,25 +25,52 @@ public class MainScene extends Scene {
             @Override
             public void handle(long now)
             {
+                if (lastUpdate > 0)
+                {
+                    long nanosElapsed = now - lastUpdate;
+                    double frameRate = 1000000000.0 / nanosElapsed;
+                    index %= frameRates.length;
+                    frameRates[index++] = frameRate;
+                }
                 sceneManager.update();
+                updateFPS();
+                lastUpdate = now;
             }
         };
-
         frameRateMeter.start();
     }
 
     /**
-     * Returns the instantaneous FPS for the last frame rendered.
      *
-     * @return
+     * @return the instantaneous FPS for the last frame rendered.
      */
-    public static int getFPS()
+    public static int getInstantFPS()
     {
         return (int)Math.round((frameRates[index % frameRates.length]));
     }
 
+    /**
+     *
+     * @Return the average FPS for the last 100 frames rendered.
+     */
+    public static int getAverageFPS()
+    {
+        double total = 0.0d;
+
+        for (int i = 0; i < frameRates.length; i++)
+        {
+            total += frameRates[i];
+        }
+
+        return (int)Math.round(total / frameRates.length);
+    }
+
+    /**
+     *
+     * @return text object for the FPS counter
+     */
     public Text fpsText() {
-        fpsText =  new Text("FPS: " + "TEMP");
+        fpsText =  new Text("FPS: " + getAverageFPS());
         fpsText.setEffect(null);
         fpsText.setFill(Color.BLACK);
         fpsText.setFont(Font.font("Arial", 20));
@@ -49,6 +80,6 @@ public class MainScene extends Scene {
     }
 
     public void updateFPS() {
-        fpsText.setText("FPS: " + getFPS());
+        fpsText.setText("FPS: " + getAverageFPS());
     }
 }

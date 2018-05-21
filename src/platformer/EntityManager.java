@@ -29,23 +29,21 @@ public class EntityManager {
     }
 
     /**
-     * @param gc
      * @param input
      * Update players and enemies, and then check collision
      */
-    public void update(GraphicsContext gc, ArrayList<String> input) {
-        player.movePlayer(input);
-        player.updateMovement();
-        player.draw(gc);
-        updateEnemies(gc);
-        checkCollision();
-    }
-
-    private void updateEnemies(GraphicsContext gc) {
+    public void updateMovement(ArrayList<String> input) {
         for(Enemy e : enemies) {
             e.updateMovement();
         }
         removeOutOfBounds();
+        player.movePlayer(input);
+        player.updateMovement();
+        checkCollision();
+    }
+
+    public void drawAllEntities(GraphicsContext gc) {
+        drawPlayer(gc);
         drawEnemies(gc);
     }
 
@@ -53,6 +51,10 @@ public class EntityManager {
         for(Enemy e : enemies) {
             e.draw(gc);
         }
+    }
+
+    private void drawPlayer(GraphicsContext gc) {
+        player.draw(gc);
     }
 
     private boolean outOfBounds(Enemy e) {

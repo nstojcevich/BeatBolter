@@ -27,6 +27,7 @@ public class GameScene extends Scene{
     private SceneManager sceneManager;
     private ArrayList<String> input;
     long lastEnemyAdd = -1;
+    long pausedTime = -1;
 
 
 
@@ -72,30 +73,32 @@ public class GameScene extends Scene{
             if (entityManager.isPlayerHit()) {
                 resetGame();
             }
-
-            if((System.currentTimeMillis() - lastEnemyAdd) >= 1000) { // 2 per second
+            if((System.currentTimeMillis() - lastEnemyAdd) >= 1000 && !paused) { // 2 per second
                 entityManager.addRandomEnemy();
                 lastEnemyAdd = System.currentTimeMillis();
             }
 
-            if (input.contains("P")) {
+            if (input.contains("SPACE")) {
                 pauseGame();
-                input.remove("P");
+                input.remove("SPACE");
             }
-
             drawStage(); // Clear screen/draw stage
-            entityManager.update(game_gc, input); // Update and draw player/enemies
+            entityManager.updateMovement(input); // Update and draw player/enemies
+            entityManager.drawAllEntities(game_gc);
         }
     }
 
     public void pauseGame() {
         openPauseMenu();
         paused = true;
+        pausedTime = System.currentTimeMillis();
     }
 
     public void unpauseGame() {
         closePauseMenu();
         paused = false;
+        pausedTime -= System.currentTimeMillis();
+        lastEnemyAdd -= pausedTime;
     }
 
     private void openPauseMenu() {

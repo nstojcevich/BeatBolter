@@ -22,7 +22,10 @@ public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
     public void updateMovement() {
         if(lastMove < 0)
             lastMove = System.currentTimeMillis();
-        if(System.currentTimeMillis() - lastMove > 5) {
+        if(System.currentTimeMillis() - lastMove > 100) {
+            lastMove = System.currentTimeMillis();
+        }
+        if(System.currentTimeMillis() - lastMove > 5) { //make sure we're not paused and not running twice in a single frame
             move(((System.currentTimeMillis() - lastMove) / SECONDS_PER_FRAME) * -10); // move 10 pixels per 60th of a second
             lastMove = System.currentTimeMillis();
             updateHitbox();
