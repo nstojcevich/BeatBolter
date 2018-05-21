@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import static platformer.util.Constants.SECONDS_PER_FRAME;
 import static platformer.util.Constants.SHOW_HITBOXES;
 
 public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
@@ -22,7 +23,7 @@ public class Enemy extends Entity implements HasHitbox, DrawnAsShape {
         if(lastMove < 0)
             lastMove = System.currentTimeMillis();
         if(System.currentTimeMillis() - lastMove > 5) {
-            move(((System.currentTimeMillis() - lastMove) / 16.67f) * -10); // move 15 pixels per 60th of a second
+            move(((System.currentTimeMillis() - lastMove) / SECONDS_PER_FRAME) * -10); // move 10 pixels per 60th of a second
             lastMove = System.currentTimeMillis();
             updateHitbox();
         }

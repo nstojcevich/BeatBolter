@@ -10,12 +10,9 @@ import platformer.SceneManager;
 import platformer.util.Constants;
 
 public class MainScene extends Scene {
-    private static long lastUpdate = 0;
     private static int index = 0;
     private static double[] frameRates = new double[100];
-    private int framesPassed = 0;
     private Text fpsText;
-    private Boolean paused = false;
 
     public MainScene(SceneManager sceneManager) {
         super(new VBox());
@@ -36,27 +33,13 @@ public class MainScene extends Scene {
      *
      * @return
      */
-    public static int getInstantFPS()
+    public static int getFPS()
     {
         return (int)Math.round((frameRates[index % frameRates.length]));
     }
 
-    /**
-     * Returns the average FPS for the last 100 frames rendered.
-     * @return
-     */
-    public static int getAverageFPS()
-    {
-        double total = 0.0d;
-
-        for (int i = 0; i < frameRates.length; i++)
-            total += frameRates[i];
-
-        return (int)Math.round(total / frameRates.length);
-    }
-
     public Text fpsText() {
-        fpsText =  new Text("FPS: " + getAverageFPS());
+        fpsText =  new Text("FPS: " + "TEMP");
         fpsText.setEffect(null);
         fpsText.setFill(Color.BLACK);
         fpsText.setFont(Font.font("Arial", 20));
@@ -66,10 +49,6 @@ public class MainScene extends Scene {
     }
 
     public void updateFPS() {
-        fpsText.setText("FPS: " + getAverageFPS());
-    }
-
-    public void setPaused(boolean paused) {
-        this.paused = paused;
+        fpsText.setText("FPS: " + getFPS());
     }
 }

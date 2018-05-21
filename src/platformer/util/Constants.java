@@ -5,8 +5,10 @@ import javafx.scene.paint.Color;
 
 public final class Constants {
 
+    public static final double SECONDS_PER_FRAME = 16.67;
+
     private Constants() {}
-    public static final boolean SHOW_HITBOXES = true;
+    public static final boolean SHOW_HITBOXES = false;
 
     // screen/platform dimensions
     public static final int SCREEN_WIDTH = 960;

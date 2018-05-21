@@ -68,7 +68,6 @@ public class GameScene extends Scene{
         } else if (!pauseMenu.isVisible()) {
             paused = false;
         }
-        sceneManager.setPaused(paused);
         if (!paused) {
             if (entityManager.isPlayerHit()) {
                 resetGame();

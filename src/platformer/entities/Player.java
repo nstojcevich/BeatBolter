@@ -79,10 +79,6 @@ public class Player extends Entity implements HasHitbox {
         }
     }
 
-    public boolean isJumping() {
-        return jumping;
-    }
-
     public void crouch() {
         if(!crouching) {
             y -= PLAYER_HEIGHT - PLAYER_CROUCH_HEIGHT;
@@ -118,11 +114,10 @@ public class Player extends Entity implements HasHitbox {
     }
 
     /**
-     * Update player sprite and hitbox position, and draw the player
-     * @param gc
+     * Draw the player. To be called every frame
+     * @param gc graphics context to draw the player to
      */
-    public void update(GraphicsContext gc) {
-        if(onGround() && !jumping) allowNewJump = true;
+    public void draw(GraphicsContext gc) {
         drawPlayer(gc);
     }
 
@@ -134,8 +129,9 @@ public class Player extends Entity implements HasHitbox {
 
     @Override
     public void updateMovement() {
+        if(onGround() && !jumping) allowNewJump = true;
         if(jumping) {
-            if ((System.currentTimeMillis() - lastJumpdate) >= 16.67) { // 2 per second
+            if ((System.currentTimeMillis() - lastJumpdate) >= SECONDS_PER_FRAME) {
                 jumpdate();
                 lastJumpdate = System.currentTimeMillis();
             }
@@ -185,14 +181,6 @@ public class Player extends Entity implements HasHitbox {
      * @param input input list passed in from main function
      */
     public void movePlayer(ArrayList<String> input) {
-        if (input.contains("LEFT") && !input.contains("RIGHT")) {
-            //move();
-        }
-
-        if (input.contains("RIGHT") && !input.contains("LEFT")) {
-            //moveRight();
-        }
-
         if(input.contains("UP") && !input.contains("DOWN")) {
             jump();
         }

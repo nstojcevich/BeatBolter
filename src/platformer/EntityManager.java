@@ -36,7 +36,7 @@ public class EntityManager {
     public void update(GraphicsContext gc, ArrayList<String> input) {
         player.movePlayer(input);
         player.updateMovement();
-        player.update(gc);
+        player.draw(gc);
         updateEnemies(gc);
         checkCollision();
     }
@@ -105,7 +105,7 @@ public class EntityManager {
     }
 
     /**
-     * Method to update enemy color if the player collides with them and reset the score
+     * Method to draw enemy color if the player collides with them and reset the score
      */
     private void checkCollision() {
         for(Enemy e : enemies) {

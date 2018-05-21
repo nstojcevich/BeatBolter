@@ -10,10 +10,8 @@ import platformer.scenes.MainScene;
 
 public class SceneManager {
     private Stage theStage;
-    private MainScene mainScene;
     private GameScene gameScene;
     private MainMenuScene mainMenuScene;
-    private Group root;
 
     public SceneManager(Group root, Canvas gameCanvas, Stage theStage) {
         this.theStage = theStage;
@@ -22,8 +20,6 @@ public class SceneManager {
         MainMenuScene mainMenuScene = new MainMenuScene(this, gameScene);
         this.mainMenuScene = mainMenuScene;
         this.gameScene = gameScene;
-        this.mainScene = mainScene;
-        this.root = root;
         root.getChildren().add(mainScene.fpsText());
         theStage.setScene(gameScene);
     }
@@ -48,10 +44,5 @@ public class SceneManager {
 
     public void update() {
         gameScene.update();
-        mainScene.updateFPS();
-    }
-
-    public void setPaused(boolean paused) {
-        mainScene.setPaused(paused);
     }
 }
