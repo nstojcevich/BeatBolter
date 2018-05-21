@@ -2,30 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/EntityManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/EntityManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/SceneManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/SceneManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/StartGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/GameScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/GameScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/MainScene$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/MainScene$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/MainScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/scenes/MainScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/platformer/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/platformer/util/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BeatBolter/score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BeatBolter/score.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/SceneManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/StartGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/scenes/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/scenes/MainScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/scenes/MainScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platformer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platformer/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/score.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/EntityManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/GameManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/SceneManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/StartGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/assets/player/crouch_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/assets/player/crouch_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/assets/player/standing_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/assets/player/standing_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/AirEnemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/DrawnAsShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/GroundEnemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/HasHitbox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/entities/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/scenes/GameScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/scenes/MainMenuScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/scenes/MainScene$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/scenes/MainScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/scenes/PauseMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/util/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/platformer/util/SensibleUnits.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Platformer/score.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/score.txt" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,25 +91,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/platformer/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+            <state relative-caret-position="915">
+              <caret line="76" column="74" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
               <folding>
-                <element signature="e#4502#4503#0" expanded="true" />
-                <element signature="e#4532#4533#0" expanded="true" />
-                <element signature="e#4649#4650#0" expanded="true" />
-                <element signature="e#4675#4676#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2295">
+              <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/platformer/entities/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="300">
               <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,7 +162,7 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/platformer/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="345">
               <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,7 +175,7 @@
         <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -182,8 +220,8 @@
       <find>drawPla</find>
       <find>hitbox.set</find>
       <find>DRAW_</find>
-      <find>*/</find>
       <find>updateHitbox</find>
+      <find>*/</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -227,12 +265,10 @@
         <option value="$PROJECT_DIR$/src/platformer/MainMenuScene.java" />
         <option value="$PROJECT_DIR$/src/platformer/GameManager.java" />
         <option value="$PROJECT_DIR$/src/Start.java" />
-        <option value="$PROJECT_DIR$/src/score.txt" />
         <option value="$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java" />
         <option value="$PROJECT_DIR$/src/platformer/scenes/PauseMenu.java" />
         <option value="$PROJECT_DIR$/src/platformer/StartGame.java" />
         <option value="$PROJECT_DIR$/src/platformer/SceneManager.java" />
-        <option value="$PROJECT_DIR$/src/platformer/scenes/GameScene.java" />
         <option value="$PROJECT_DIR$/src/platformer/scenes/MainScene.java" />
         <option value="$PROJECT_DIR$/src/platformer/util/Constants.java" />
         <option value="$PROJECT_DIR$/src/platformer/EntityManager.java" />
@@ -240,6 +276,9 @@
         <option value="$PROJECT_DIR$/src/platformer/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/platformer/Main.java" />
         <option value="$PROJECT_DIR$/src/platformer/entities/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/platformer/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/score.txt" />
+        <option value="$PROJECT_DIR$/src/.gitignore" />
       </list>
     </option>
   </component>
@@ -266,8 +305,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,7 +342,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,11 +519,12 @@
       <workItem from="1526510095359" duration="10108000" />
       <workItem from="1526564806555" duration="175000" />
       <workItem from="1526592476703" duration="855000" />
+      <workItem from="1526904674612" duration="288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111445000" />
+    <option name="totallyTimeSpent" value="112306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
@@ -494,57 +534,35 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32858709" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info id="Image Layers" order="4" />
+      <window_info id="Image Layers" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5010661" side_tool="true" visible="true" weight="0.32968238" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.32858709" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3833516" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32968238" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57015985" visible="true" weight="0.15245202" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" visible="true" weight="0.32968238" />
+      <window_info id="Capture Tool" order="12" />
+      <window_info id="Designer" order="13" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.6703755" visible="true" weight="0.15245202" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
-      <window_info id="Structure" order="3" sideWeight="0.42984015" side_tool="true" visible="true" weight="0.15245202" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Favorites" order="9" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.6703755" visible="true" weight="0.15085287" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Problems" order="7" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info id="UI Designer" order="10" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
-      <window_info anchor="bottom" id="Profiler" order="7" />
-      <window_info id="Image Layers" order="11" />
-      <window_info anchor="bottom" id="Changes" order="7" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Capture Tool" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32968238" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
+      <window_info id="Favorites" order="9" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32858709" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32858709" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="13" />
+      <window_info anchor="bottom" id="Changes" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Profiler" order="7" />
+      <window_info anchor="bottom" id="Problems" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="7" />
@@ -602,13 +620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/platformer/frontend/javafx/FxDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -764,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/score.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/scenes/MainMenuScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -799,13 +803,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/StartGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/StartGame.java" />
     <entry file="file://$PROJECT_DIR$/src/platformer/SceneManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -814,23 +812,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1010#1011#0" expanded="true" />
             <element signature="e#1058#1059#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/GameScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="76" column="30" selection-start-line="76" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,33 +838,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
-          <folding>
-            <element signature="e#4502#4503#0" expanded="true" />
-            <element signature="e#4532#4533#0" expanded="true" />
-            <element signature="e#4649#4650#0" expanded="true" />
-            <element signature="e#4675#4676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="345">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="111" column="96" selection-start-line="111" selection-start-column="96" selection-end-line="111" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -901,13 +862,13 @@
     <entry file="file://$PROJECT_DIR$/src/platformer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/platformer/entities/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="300">
           <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -920,6 +881,47 @@
             <element signature="e#1589#1590#0" expanded="true" />
             <element signature="e#1617#1618#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="76" column="74" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/score.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platformer/EntityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>
