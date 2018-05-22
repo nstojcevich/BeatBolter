@@ -23,7 +23,7 @@ public final class Constants {
     public static final Image MAIN_SCREEN_BACKGROUND = new Image("platformer/assets/menu/menu_background.png", SCREEN_WIDTH, SCREEN_HEIGHT, false, false);
     public static final Image AIR_ENEMY_IMGAGE = new Image("platformer/assets/enemies/AirEnemy.png", 60, 20, false, false);
     public static final Image GROUND_ENEMY_IMAGE = new Image("platformer/assets/enemies/GroundEnemy.png", 60, 30, false, false);
-
+    public static final Image SKY_IMAGE = new Image("platformer/assets/Sky.png", 960, 540, false, false);
 
     // player dimensions
     public static final int PLAYER_WIDTH = (int)PLAYER_LEFT_IMAGE.getWidth();

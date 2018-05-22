@@ -113,8 +113,7 @@ public class GameScene extends Scene{
         game_gc.setGlobalAlpha(1);
 
         // Sky
-        game_gc.setFill(Color.SKYBLUE);
-        game_gc.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        game_gc.drawImage(SKY_IMAGE, 0, 0);
 
         // Ground
         game_gc.setFill(Color.GREEN);
