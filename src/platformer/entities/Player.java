@@ -46,7 +46,7 @@ public class Player extends Entity implements HasHitbox {
 
     public void jump() {
         if(!jumping) {
-            jumpdate();
+            jumping = true;
         }
     }
 
@@ -119,11 +119,14 @@ public class Player extends Entity implements HasHitbox {
 
     @Override
     public void updateMovement() {
+        if(System.currentTimeMillis() - lastJumpdate > 50) {
+            lastJumpdate = System.currentTimeMillis();
+        }
         if(onGround() && !jumping) allowNewJump = true;
         if(jumping) {
             if ((System.currentTimeMillis() - lastJumpdate) >= SECONDS_PER_FRAME) {
                 jumpdate();
-                lastJumpdate = System.currentTimeMillis();
+                lastJumpdate += SECONDS_PER_FRAME;
             }
         }
         if(lastMove < 0)
