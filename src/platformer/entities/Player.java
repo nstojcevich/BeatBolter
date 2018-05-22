@@ -47,6 +47,7 @@ public class Player extends Entity implements HasHitbox {
     public void jump() {
         if(!jumping) {
             jumping = true;
+            jumpdate();
         }
     }
 
