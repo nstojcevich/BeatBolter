@@ -116,8 +116,8 @@ public class GameScene extends Scene{
         game_gc.drawImage(SKY_IMAGE, 0, 0);
 
         // Ground
-        game_gc.setFill(Color.GREEN);
-        game_gc.fillRect(0, SCREEN_HEIGHT - GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT);
+        //game_gc.setFill(Color.GREEN);
+        //game_gc.fillRect(0, SCREEN_HEIGHT - GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT);
     }
 
     public void resetGame() {

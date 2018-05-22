@@ -9,20 +9,18 @@ import java.util.ArrayList;
 import static platformer.util.Constants.*;
 
 public class Player extends Entity implements HasHitbox {
-    private boolean facingLeft;
     private boolean allowNewJump, jumping, crouching;
     private Rectangle crouchingHitbox = new Rectangle(PLAYER_CROUCH_WIDTH - PLAYER_CROUCH_WIDTH/3, PLAYER_CROUCH_HEIGHT);
-    private double gravity = .6;
+    private double gravity = .5;
     private double yVel = JUMP_VELOCITY;
     private boolean hit;
     private long lastMove = -1;
     private long lastJumpdate = -1;
 
     public Player(int x, int y) {
-        super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT, PLAYER_RIGHT_IMAGE);
+        super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT, PLAYER_STANDING_IMAGE);
         this.x = x;
         this.y = y;
-        facingLeft = false;
         allowNewJump = false;
         jumping = false;
         crouching = false;
@@ -133,13 +131,10 @@ public class Player extends Entity implements HasHitbox {
      */
     @Override
     public void draw(GraphicsContext gc) {
-        if (facingLeft) {
-            if(crouching) gc.drawImage(PLAYER_LEFT_CROUCH_IMAGE, x, gc.getCanvas().getHeight() - y);
-            else gc.drawImage(PLAYER_LEFT_IMAGE, x, gc.getCanvas().getHeight() - y);
-        } else {
-            if(crouching) gc.drawImage(PLAYER_RIGHT_CROUCH_IMAGE, x, gc.getCanvas().getHeight() - y);
-            else gc.drawImage(PLAYER_RIGHT_IMAGE, x, gc.getCanvas().getHeight() - y);
-        }
+        if(crouching)
+            gc.drawImage(PLAYER_CROUCHING_IMAGE, x, gc.getCanvas().getHeight() - y);
+        else
+            gc.drawImage(PLAYER_STANDING_IMAGE, x, gc.getCanvas().getHeight() - y);
         if(SHOW_HITBOXES) {
             gc.setFill(Color.GREENYELLOW);
             gc.setGlobalAlpha(.5);

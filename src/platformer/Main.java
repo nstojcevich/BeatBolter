@@ -17,6 +17,7 @@ public class Main extends Application {
 
     public void start(Stage theStage) {
         theStage.setTitle("Platformer Test");
+        theStage.setResizable(false);
         Group root = new Group();
 
         // Initialize Canvas
