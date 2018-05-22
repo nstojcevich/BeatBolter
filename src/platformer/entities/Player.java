@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import static platformer.util.Constants.*;
 
 public class Player extends Entity implements HasHitbox {
-    private double moveSpeed = ((SCREEN_WIDTH/3)/60); // move one third of the screen in one second (60 frames)
     private boolean facingLeft;
     private boolean allowNewJump, jumping, crouching;
     private Rectangle crouchingHitbox = new Rectangle(PLAYER_CROUCH_WIDTH - PLAYER_CROUCH_WIDTH/3, PLAYER_CROUCH_HEIGHT);
@@ -20,7 +19,7 @@ public class Player extends Entity implements HasHitbox {
     private long lastJumpdate = -1;
 
     public Player(int x, int y) {
-        super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT);
+        super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT, PLAYER_RIGHT_IMAGE);
         this.x = x;
         this.y = y;
         facingLeft = false;
@@ -64,7 +63,7 @@ public class Player extends Entity implements HasHitbox {
             yVel -= gravity;
         }
         if(onGround()) {
-            y = getHeight() + GROUND_HEIGHT;
+            y = getHitboxHeight() + GROUND_HEIGHT;
             jumping = false;
             yVel = JUMP_VELOCITY;
         }
@@ -85,7 +84,7 @@ public class Player extends Entity implements HasHitbox {
     }
 
     @Override
-    public int getHeight() {
+    public int getHitboxHeight() {
         if(crouching)
             return PLAYER_CROUCH_HEIGHT;
         else
@@ -93,7 +92,7 @@ public class Player extends Entity implements HasHitbox {
     }
 
     @Override
-    public int getWidth() {
+    public int getHitboxWidth() {
         if(crouching)
             return PLAYER_CROUCH_WIDTH;
         else
@@ -101,20 +100,12 @@ public class Player extends Entity implements HasHitbox {
     }
 
     public boolean onGround() {
-        return y <= GROUND_HEIGHT + getHeight();
-    }
-
-    /**
-     * Draw the player. To be called every frame
-     * @param gc graphics context to drawEntities the player to
-     */
-    public void draw(GraphicsContext gc) {
-        drawPlayer(gc);
+        return y <= GROUND_HEIGHT + getHitboxHeight();
     }
 
     @Override
     protected void updateHitbox() {
-        getHitbox().setX(x + (getWidth() - getHitbox().getWidth())/2);
+        getHitbox().setX(x + (getHitboxWidth() - getHitbox().getWidth())/2);
         getHitbox().setY(SCREEN_HEIGHT - y);
     }
 
@@ -140,7 +131,8 @@ public class Player extends Entity implements HasHitbox {
      * Draw player sprite and hitbox(if enabled)
      * @param gc
      */
-    private void drawPlayer(GraphicsContext gc) {
+    @Override
+    public void draw(GraphicsContext gc) {
         if (facingLeft) {
             if(crouching) gc.drawImage(PLAYER_LEFT_CROUCH_IMAGE, x, gc.getCanvas().getHeight() - y);
             else gc.drawImage(PLAYER_LEFT_IMAGE, x, gc.getCanvas().getHeight() - y);
