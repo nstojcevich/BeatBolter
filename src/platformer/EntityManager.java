@@ -18,13 +18,13 @@ public class EntityManager {
     private Player player;
     private Set<Enemy> enemies = new HashSet<>();
     private Random rand = new Random();
-    private GameManager gameManager;
+    private ScoreManager scoreManager;
 
     /**
      * Manages all enemies and players as well as score, handles movement, collision, adding, removing, and drawing of both.
      */
-    public EntityManager(GameManager gameManager) {
-        this.gameManager = gameManager;
+    public EntityManager(ScoreManager scoreManager) {
+        this.scoreManager = scoreManager;
         player = new Player(PLAYER_START_X, PLAYER_START_Y);
     }
 
@@ -62,7 +62,7 @@ public class EntityManager {
         enemies.removeIf(this::outOfBounds);
         int removed = before - enemies.size();
         if(!player.isHit()) {
-            gameManager.addToScore(removed);
+            scoreManager.addToScore(removed);
         }
         if(removed >= 1) {
             player.setHit(false);

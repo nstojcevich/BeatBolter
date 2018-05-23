@@ -17,7 +17,7 @@ public class SceneManager {
         this.theStage = theStage;
         MainScene mainScene = new MainScene(this);
         GameScene gameScene = new GameScene(root, gameCanvas, this);
-        MainMenuScene mainMenuScene = new MainMenuScene(this, gameScene);
+        MainMenuScene mainMenuScene = new MainMenuScene(this);
         this.mainMenuScene = mainMenuScene;
         this.gameScene = gameScene;
         root.getChildren().add(mainScene.fpsText());

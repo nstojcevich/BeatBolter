@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import platformer.EntityManager;
-import platformer.GameManager;
+import platformer.ScoreManager;
 import platformer.SceneManager;
 
 import java.util.ArrayList;
@@ -18,11 +18,11 @@ import java.util.ArrayList;
 import static platformer.util.Constants.*;
 
 public class GameScene extends Scene{
-    private GameManager gameManager;
+    private ScoreManager scoreManager;
     private EntityManager entityManager;
     private GraphicsContext game_gc;
     private boolean paused = false;
-    private Text statsText = new Text();
+    private Text scoreText = new Text();
     private PauseMenu pauseMenu;
     private SceneManager sceneManager;
     private ArrayList<String> input;
@@ -30,14 +30,20 @@ public class GameScene extends Scene{
     long pausedTime = -1;
 
 
+    /**
+     * Scene that handles the drawing and updating of the game and the pause screen
+     * @param root root group of the main application
+     * @param gameCanvas canvas to be drawn on
+     * @param sceneManager sceneManager of the main application used to pause and unpause
+     */
     public GameScene(Group root, Canvas gameCanvas, SceneManager sceneManager) {
         super(root, SCREEN_WIDTH, SCREEN_HEIGHT);
         game_gc = gameCanvas.getGraphicsContext2D();
-        gameManager = new GameManager();
-        entityManager = new EntityManager(gameManager);
+        scoreManager = new ScoreManager();
+        entityManager = new EntityManager(scoreManager);
         pauseMenu = new PauseMenu(sceneManager, this, gameCanvas);
         pauseMenu.setVisible(false);
-        root.getChildren().add(stats());
+        root.getChildren().add(score());
         root.getChildren().add(pauseMenu);
         this.sceneManager = sceneManager;
 
@@ -62,6 +68,10 @@ public class GameScene extends Scene{
                 });
     }
 
+    /**
+     * add in random enemies every x seconds and check for pausing/unpausing of the game, update entity movement then
+     * draw the stage and all entities
+     */
     public void update() {
         if (!sceneManager.getCurrentScene().equals(this)) {
             paused = true;
@@ -86,6 +96,9 @@ public class GameScene extends Scene{
         }
     }
 
+    /**
+     * pause the game update loop and open up a pause screen
+     */
     public void pauseGame() {
         game_gc.setEffect(new GaussianBlur());
         pauseMenu.setVisible(true);
@@ -93,6 +106,9 @@ public class GameScene extends Scene{
         pausedTime = System.currentTimeMillis();
     }
 
+    /**
+     * close the pause screen and resume gameplay
+     */
     public void unpauseGame() {
         pauseMenu.setVisible(false);
         game_gc.setEffect(null);
@@ -101,10 +117,13 @@ public class GameScene extends Scene{
         lastEnemyAdd -= pausedTime;
     }
 
+    /**
+     * draw the stage and all entities, update score
+     */
     private void draw() {
         drawStage();
         entityManager.drawEntities(game_gc);
-        updateStats();
+        updateScore();
 
     }
 
@@ -120,23 +139,33 @@ public class GameScene extends Scene{
         //game_gc.fillRect(0, SCREEN_HEIGHT - GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT);
     }
 
+    /**
+     * reset score and enemies to start a new game
+     */
     public void resetGame() {
-        gameManager.reset();
+        scoreManager.reset();
         entityManager.reset();
         drawStage();
     }
 
-    private Node stats() {
-        statsText.setEffect(null);
-        statsText.setFill(Color.BLACK);
-        statsText.setFont(Font.font("Arial", 20));
-        statsText.setText("Score: " + gameManager.getScore() + "\nHighscore: " + gameManager.getHighScore());
-        statsText.setX(10);
-        statsText.setY(20);
-        return statsText;
+    /**
+     * score and high score text box
+     * @return node containing the score text
+     */
+    private Node score() {
+        scoreText.setEffect(null);
+        scoreText.setFill(Color.BLACK);
+        scoreText.setFont(Font.font("Arial", 20));
+        scoreText.setText("Score: " + scoreManager.getScore() + "\nHighscore: " + scoreManager.getHighScore());
+        scoreText.setX(10);
+        scoreText.setY(20);
+        return scoreText;
     }
 
-    private void updateStats() {
-        statsText.setText("Score: " + gameManager.getScore() + "\nHighscore: " + gameManager.getHighScore());
+    /**
+     * read updated scores from the scoreManager
+     */
+    private void updateScore() {
+        scoreText.setText("Score: " + scoreManager.getScore() + "\nHighscore: " + scoreManager.getHighScore());
     }
 }

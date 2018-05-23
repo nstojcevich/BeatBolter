@@ -11,12 +11,17 @@ import static platformer.util.Constants.*;
 public class Player extends Entity implements HasHitbox {
     private boolean allowNewJump, jumping, crouching;
     private Rectangle crouchingHitbox = new Rectangle(PLAYER_CROUCH_WIDTH - PLAYER_CROUCH_WIDTH/3, PLAYER_CROUCH_HEIGHT);
-    private double gravity = .5;
+    private final double gravity = .5;
     private double yVel = JUMP_VELOCITY;
     private boolean hit;
     private long lastMove = -1;
     private long lastJumpdate = -1;
 
+    /**
+     *
+     * @param x starting x position of the player
+     * @param y startying y position of the player
+     */
     public Player(int x, int y) {
         super(x, y, PLAYER_WIDTH/2, PLAYER_HEIGHT, PLAYER_STANDING_IMAGE);
         this.x = x;
@@ -26,6 +31,10 @@ public class Player extends Entity implements HasHitbox {
         crouching = false;
     }
 
+    /**
+     *
+     * @return the standing or crouching hitbox of the player
+     */
     @Override
     public Rectangle getHitbox() {
         if (!crouching) {
@@ -41,6 +50,9 @@ public class Player extends Entity implements HasHitbox {
         y = PLAYER_START_Y;
     }
 
+    /**
+     * Start the jump process, the process is continued through the jumpdate method
+     * */
     public void jump() {
         if(!jumping) {
             jumping = true;
@@ -67,6 +79,9 @@ public class Player extends Entity implements HasHitbox {
         }
     }
 
+    /**
+     * Make the player crouch
+     */
     public void crouch() {
         if(!crouching) {
             y -= PLAYER_HEIGHT - PLAYER_CROUCH_HEIGHT;
@@ -74,6 +89,9 @@ public class Player extends Entity implements HasHitbox {
         crouching = true;
     }
 
+    /**
+     * Make the player uncrouch
+     */
     public void unCrouch() {
         if(crouching) {
             y += PLAYER_HEIGHT - PLAYER_CROUCH_HEIGHT;
@@ -97,6 +115,10 @@ public class Player extends Entity implements HasHitbox {
             return PLAYER_WIDTH;
     }
 
+    /**
+     *
+     * @return whether or not the player is touching the ground
+     */
     public boolean onGround() {
         return y <= GROUND_HEIGHT + getHitboxHeight();
     }
@@ -107,6 +129,9 @@ public class Player extends Entity implements HasHitbox {
         getHitbox().setY(SCREEN_HEIGHT - y);
     }
 
+    /**
+     * Updates the jump movement based on the time passed since the last update
+     */
     @Override
     public void updateMovement() {
         if(System.currentTimeMillis() - lastJumpdate > 50) {
@@ -127,7 +152,7 @@ public class Player extends Entity implements HasHitbox {
 
     /**
      * Draw player sprite and hitbox(if enabled)
-     * @param gc
+     * @param gc the GraphicsContext that the player images are to be drawn on
      */
     @Override
     public void draw(GraphicsContext gc) {

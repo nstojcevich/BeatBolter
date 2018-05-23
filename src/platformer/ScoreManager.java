@@ -3,13 +3,16 @@ package platformer;
 import java.io.*;
 import java.util.Scanner;
 
-public class GameManager {
+public class ScoreManager {
     private int score = 0;
     private int highScore = 0;
     private PrintWriter writer;
     private File scoreFile = new File("score.txt");
 
-    public GameManager() {
+    /**
+     * Keep track of current game score and load/write high scores from the score file
+      */
+    public ScoreManager() {
         readHighScoreFromFile();
     }
 
