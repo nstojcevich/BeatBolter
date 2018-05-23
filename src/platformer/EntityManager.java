@@ -73,7 +73,7 @@ public class EntityManager {
      * add a new air or ground enemy based on a random number (50% chance for both)
      */
     public void addRandomEnemy() {
-        if(rand.nextInt(2) == 1)
+        if(rand.nextBoolean())
             enemies.add(new GroundEnemy());
         else
             enemies.add(new AirEnemy());
