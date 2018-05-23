@@ -114,7 +114,7 @@ public class Player extends Entity implements HasHitbox {
         }
         if(onGround() && !jumping) allowNewJump = true;
         if(jumping) {
-            if ((System.currentTimeMillis() - lastJumpdate) >= SECONDS_PER_FRAME) {
+            while ((System.currentTimeMillis() - lastJumpdate) >= SECONDS_PER_FRAME) {
                 jumpdate();
                 lastJumpdate += SECONDS_PER_FRAME;
             }
