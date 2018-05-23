@@ -24,6 +24,7 @@ public class GameScene extends Scene{
     private boolean paused = false;
     private Text scoreText = new Text();
     private PauseMenu pauseMenu;
+    private EndGame endGame;
     private SceneManager sceneManager;
     private ArrayList<String> input;
     long lastEnemyAdd = -1;
@@ -42,9 +43,12 @@ public class GameScene extends Scene{
         scoreManager = new ScoreManager();
         entityManager = new EntityManager(scoreManager);
         pauseMenu = new PauseMenu(sceneManager, this, gameCanvas);
+        endGame = new EndGame(sceneManager, this, gameCanvas);
+        endGame.setVisible(false);
         pauseMenu.setVisible(false);
         root.getChildren().add(score());
         root.getChildren().add(pauseMenu);
+        root.getChildren().add(endGame);
         this.sceneManager = sceneManager;
 
         // ArrayList to hold all of the currently pressed keys on the keyboard
@@ -75,12 +79,12 @@ public class GameScene extends Scene{
     public void update() {
         if (!sceneManager.getCurrentScene().equals(this)) {
             paused = true;
-        } else if (!pauseMenu.isVisible()) {
+        } else if (!pauseMenu.isVisible() && !endGame.isVisible()) {
             paused = false;
         }
         if (!paused) {
             if (entityManager.isPlayerHit()) {
-                resetGame();
+                endGame();
             }
             if((System.currentTimeMillis() - lastEnemyAdd) >= 1000 && !paused) { // 2 per second
                 entityManager.addRandomEnemy();
@@ -128,6 +132,9 @@ public class GameScene extends Scene{
     }
 
     private void drawStage() {
+        // clear any effects
+        if(!paused)
+            game_gc.setEffect(null);
         // Make sure everything is opaque
         game_gc.setGlobalAlpha(1);
 
@@ -143,6 +150,8 @@ public class GameScene extends Scene{
      * reset score and enemies to start a new game
      */
     public void resetGame() {
+        endGame.setVisible(false);
+        paused = false;
         scoreManager.reset();
         entityManager.reset();
         drawStage();
@@ -167,5 +176,11 @@ public class GameScene extends Scene{
      */
     private void updateScore() {
         scoreText.setText("Score: " + scoreManager.getScore() + "\nHighscore: " + scoreManager.getHighScore());
+    }
+
+    private void endGame() {
+        game_gc.setEffect(new GaussianBlur());
+        endGame.setVisible(true);
+        paused = true;
     }
 }
