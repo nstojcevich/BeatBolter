@@ -7,7 +7,7 @@ public class GameManager {
     private int score = 0;
     private int highScore = 0;
     private PrintWriter writer;
-    private File scoreFile = new File("src/score.txt");
+    private File scoreFile = new File("score.txt");
 
     public GameManager() {
         readHighScoreFromFile();
