@@ -132,18 +132,15 @@ public class GameScene extends Scene{
     }
 
     private void drawStage() {
-        // clear any effects
+        // clear any effects when unpaused
         if(!paused)
             game_gc.setEffect(null);
+
         // Make sure everything is opaque
         game_gc.setGlobalAlpha(1);
 
         // Sky
         game_gc.drawImage(SKY_IMAGE, 0, 0);
-
-        // Ground
-        //game_gc.setFill(Color.GREEN);
-        //game_gc.fillRect(0, SCREEN_HEIGHT - GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT);
     }
 
     /**
