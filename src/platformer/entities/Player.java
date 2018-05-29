@@ -12,7 +12,7 @@ public class Player extends Entity implements HasHitbox {
     private boolean allowNewJump, jumping, crouching;
     private Rectangle crouchingHitbox = new Rectangle(PLAYER_CROUCH_WIDTH - PLAYER_CROUCH_WIDTH/3, PLAYER_CROUCH_HEIGHT);
     private final double gravity = .5;
-    private double yVel = JUMP_VELOCITY;
+    private double yVel = JUMP_VELOCITY ;
     private boolean hit;
     private long lastMove = -1;
     private long lastJumpdate = -1;

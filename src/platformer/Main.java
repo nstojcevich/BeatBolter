@@ -3,7 +3,12 @@ package platformer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.net.URL;
 
 import static platformer.util.Constants.SCREEN_HEIGHT;
 import static platformer.util.Constants.SCREEN_WIDTH;
@@ -28,5 +33,10 @@ public class Main extends Application {
 
         // Finally show everything
         sceneManager.start();
+
+        URL resource = getClass().getResource("assets/beat.wav");
+        MediaPlayer a =new MediaPlayer(new Media(resource.toString()));
+        a.setOnEndOfMedia(() -> a.seek(Duration.ZERO));
+        a.play();
     }
 }
